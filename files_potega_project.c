@@ -93,11 +93,11 @@ int main() {
     printf("The contents of file are :\n");
     int i = 0;
     int j = 0;
-    char buff[5];
-    while((ch = fgetc(fp)) != EOF)
+    char buff[500];
+    while((ch = fgets(fp)) != EOF)
     {
-        if(ch == ',')
-        {
+        //if(ch == ',')
+        //{
             buff[i] = 0;
             //num[j++] = *buff - 48; // todo polacz elementy tablicy buff, oejmij 48, a nastepnie wrzuc to tablicy  num
             num[j] = atoi(buff);
@@ -108,17 +108,17 @@ int main() {
             i = 0;
             num[j++];
 
-            continue;
-        }
-        else
+          //  continue;
+       // }
+       // else
         {
             buff[i++] = ch;
         }
-        printf("%c\n", ch);
+       // printf("%c\n", ch);
     }
 
     // read num arr
-    for(int i=0; i < 5; ++i)
+    for(int i=0; i < 10; ++i)
     {
         printf("%d: %d\n", i, num[i]);
     }
